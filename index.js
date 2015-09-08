@@ -24,7 +24,7 @@ function makeModule(Promise) {
   }
 
   function then(onFulfilled, onRejected) {
-    return this.toPromise().then(onFulfilled, onRejected);
+    return this.toPromise().then(onFulfilled.bind(this), onRejected);
   }
 
   // Creates a new object that wraps `factory`, where each HTTP method
